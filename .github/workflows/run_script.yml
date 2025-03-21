@@ -1,0 +1,31 @@
+name: Daily Douban Coming Soon Updater
+
+on:
+  schedule:
+    - cron: "0 4 * * *"  # Runs daily at 04:00 UTC (12:00 Beijing Time)
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  scrape_movies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run scraper script
+        run: python douban_coming_soon_v2025.py
+
+      - name: Upload movie data
+        uses: actions/upload-artifact@v4
+        with:
+          name: movie-data
+          path: data/

@@ -172,7 +172,7 @@ print("\nComparison complete. Results saved.")
 
 # ✅ Combine today’s and removed movies into a single dataset for JSON
 df_combined = pd.concat([df_today, removed_movies], ignore_index=True)
-
+print(df_combined.head())
 # Function to format release date and log invalid data
 def format_release_date(date):
     # Check if the date is a valid string before applying replace

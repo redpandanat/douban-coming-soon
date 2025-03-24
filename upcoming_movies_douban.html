@@ -492,7 +492,7 @@
 						case "Updated":
 							updatedMovies.push([
 								formatDateForDisplay(movie.release_date),
-								formatDateForDisplay(movie.old_release_date || "-"),
+								formatDateForDisplay(movie.old_release_date),
 								`<a href="${movie.url}" target="_blank">${movie.title}</a>`,
 								genreStringFinal,
 								regionStringFinal,

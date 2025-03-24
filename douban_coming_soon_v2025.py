@@ -24,12 +24,19 @@ import io
 from date_utils import convert_date
 from bs4 import BeautifulSoup
 import json
+import logging
 
 # Set Pandas options to display full table
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 pd.set_option('display.width', None)
 pd.set_option('display.max_colwidth', None)
+
+logging.basicConfig(
+    filename='scraping.log',  # Log output file
+    level=logging.INFO,  # Set the logging level to INFO (or DEBUG for more details)
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
 
 headers = {
     "Connection": "keep-alive",
@@ -38,15 +45,24 @@ headers = {
 
 url = 'https://movie.douban.com/coming'
 response = requests.get(url, headers=headers)
+
+# Check if the request was successful
+if response.status_code == 200:
+    logging.info(f"Successfully fetched the page: {url}")
+else:
+    logging.error(f"Failed to fetch the page: {url}, status code: {response.status_code}")
+
 soup = BeautifulSoup(response.text, 'html.parser')
 
 # Extract the first table using BeautifulSoup
 table = soup.find('table')
 
+# Log whether the table was found
 if table:
     rows = table.find_all('tr')
+    logging.info(f"Found the table with {len(rows)} rows.")
 else:
-    print("Error: Table not found!")
+    logging.error("Error: Table not found!")
     rows = []
 
 data = []

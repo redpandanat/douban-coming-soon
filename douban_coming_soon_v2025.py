@@ -170,9 +170,15 @@ print("\nComparison complete. Results saved.")
 # ✅ Combine today’s and removed movies into a single dataset for JSON
 df_combined = pd.concat([df_today, removed_movies], ignore_index=True)
 
-# Replace '99' in release_date with '??' for display
+# Function to format release date and log invalid data
 def format_release_date(date):
-    return date.replace('-99', '-??')
+    # Check if the date is a valid string before applying replace
+    if isinstance(date, str):
+        return date.replace('-99', '-??')
+    else:
+        # Log the invalid (non-string) value
+        print(f"Invalid value for release_date: {date}")  # Log this to GitHub Actions logs
+        return date  # Return the value unchanged or as NaN if you prefer
 
 df_combined["release_date"] = df_combined["release_date"].apply(format_release_date)
 df_combined["old_release_date"] = df_combined["old_release_date"].apply(format_release_date)

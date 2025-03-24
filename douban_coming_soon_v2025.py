@@ -181,7 +181,9 @@ def format_release_date(date):
         print(f"Invalid value for release_date: {date}")  # Log this to GitHub Actions logs
         return date  # Return the value unchanged or as NaN if you prefer
 
+
 df_combined["release_date"] = df_combined["release_date"].apply(format_release_date)
+print(df_combined.head())  # This will show a few rows of the DataFrame to inspect the content.
 print(df_combined["old_release_date"])
 df_combined["old_release_date"] = df_combined["old_release_date"].apply(format_release_date)
 

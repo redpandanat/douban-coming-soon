@@ -135,6 +135,8 @@ removed_movies = df_prev[df_prev["url"].isin(urls_prev - urls_today)].copy()
 df_today["old_release_date"] = df_today["release_date"]
 
 # Merge today and previous data to find updated movies
+print(f"df_today shape: {df_today.shape}")  # This will show the number of rows and columns in df_today
+print(f"removed_movies shape: {removed_movies.shape}")  # This will show the number of rows and columns in removed_movies
 updated_movies = df_today.merge(df_prev, on="url", suffixes=("_today", "_prev"))
 
 # Set the old release date to the previous release date for updated movies where the release date has changed

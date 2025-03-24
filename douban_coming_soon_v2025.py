@@ -115,8 +115,11 @@ new_movies = df_today[df_today["url"].isin(urls_today - urls_prev)]
 # Find **Removed Movies** (URLs in yesterday’s list but missing today)
 removed_movies = df_prev[df_prev["url"].isin(urls_prev - urls_today)].copy()
 
-# Find **Updated Movies** (URLs exist in both, but release date changed)
+# Merge today and previous data to find updated movies
 updated_movies = df_today.merge(df_prev, on="url", suffixes=("_today", "_prev"))
+# Add old release date (from previous day) to today's movies
+df_today["old_release_date"] = df_today["url"].map(updated_movies.set_index("url")["release_date_prev"])
+# Now, filter to get only updated movies where release date has changed
 updated_movies = updated_movies[updated_movies["release_date_today"] != updated_movies["release_date_prev"]]
 
 # ✅ Distinguish between "Probably Dropped" and "Probably Released"
@@ -151,6 +154,7 @@ def format_release_date(date):
     return date.replace('-99', '-??')
 
 df_combined["release_date"] = df_combined["release_date"].apply(format_release_date)
+df_combined["old_release_date"] = df_combined["old_release_date"].apply(format_release_date)
 
 # ✅ Convert DataFrame to a list of dictionaries
 movies_list = df_combined.to_dict(orient="records")

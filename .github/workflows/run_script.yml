@@ -24,8 +24,11 @@ jobs:
       - name: Run scraper script
         run: python douban_coming_soon_v2025.py
 
-      - name: Upload movie data
-        uses: actions/upload-artifact@v4
-        with:
-          name: movie-data
-          path: data/
+      - name: Commit and push data files
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git pull origin main  # Ensure we have the latest changes
+          git add data/
+          git commit -m "Update movie data [skip ci]" || echo "No changes to commit"
+          git push origin main

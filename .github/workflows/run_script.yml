@@ -32,5 +32,5 @@ jobs:
           git add data/
           git commit -m "Update movie data [skip ci]" || echo "No changes to commit"
           
-          # Authenticate with the GH_TOKEN stored in secrets for git push
-          git push https://github-actions:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }} HEAD:main
+          # Authenticate with the default GITHUB_TOKEN for pushing changes
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main

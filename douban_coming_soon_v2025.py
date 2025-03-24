@@ -182,6 +182,7 @@ def format_release_date(date):
         return date  # Return the value unchanged or as NaN if you prefer
 
 df_combined["release_date"] = df_combined["release_date"].apply(format_release_date)
+print(df_combined["old_release_date"])
 df_combined["old_release_date"] = df_combined["old_release_date"].apply(format_release_date)
 
 # ✅ Convert DataFrame to a list of dictionaries

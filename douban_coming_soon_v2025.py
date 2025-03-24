@@ -187,7 +187,10 @@ def format_release_date(date):
 df_combined["release_date"] = df_combined["release_date"].apply(format_release_date)
 print(df_combined.head())  # This will show a few rows of the DataFrame to inspect the content.
 print(df_combined["old_release_date"])
-df_combined["old_release_date"] = df_combined["old_release_date"].apply(format_release_date)
+df_combined["old_release_date"] = df_combined["old_release_date"].astype(str)
+df_combined["old_release_date"] = df_combined["old_release_date"].apply(lambda x: x.replace('-99', '-??') if isinstance(x, str) else x)
+
+#df_combined["old_release_date"] = df_combined["old_release_date"].apply(format_release_date)
 
 # ✅ Convert DataFrame to a list of dictionaries
 movies_list = df_combined.to_dict(orient="records")

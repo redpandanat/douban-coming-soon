@@ -31,4 +31,6 @@ jobs:
           git pull origin main  # Ensure we have the latest changes
           git add data/
           git commit -m "Update movie data [skip ci]" || echo "No changes to commit"
-          git push origin main
+          
+          # Authenticate with the GH_TOKEN stored in secrets for git push
+          git push https://github-actions:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }} HEAD:main

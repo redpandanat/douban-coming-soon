@@ -8,6 +8,8 @@ on:
 jobs:
   scrape_movies:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # <-- This grants write access to repository contents
 
     steps:
       - name: Checkout repository
@@ -36,11 +38,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-      # Debugging GH_TOKEN value
-      - name: Debugging GH_TOKEN
-        run: |
-          echo "GH_TOKEN=${{ secrets.GH_TOKEN }}"
 
       - name: Commit and push changes
         run: |

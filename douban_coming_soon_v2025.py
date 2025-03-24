@@ -137,11 +137,12 @@ df_today["old_release_date"] = df_today["release_date"]
 # Merge today and previous data to find updated movies
 updated_movies = df_today.merge(df_prev, on="url", suffixes=("_today", "_prev"))
 
-# Set the old release date to the previous release date for updated movies
-df_today.loc[df_today["url"].isin(updated_movies["url"]), "old_release_date"] = updated_movies["release_date_prev"]
+# Set the old release date to the previous release date for updated movies where the release date has changed
+df_today.loc[df_today["url"].isin(updated_movies[updated_movies["release_date_today"] != updated_movies["release_date_prev"]]["url"]), "old_release_date"] = updated_movies["release_date_prev"]
 
-# Now, filter to get only updated movies where release date has changed
+# Now, filter to get only updated movies where the release date has actually changed
 updated_movies = updated_movies[updated_movies["release_date_today"] != updated_movies["release_date_prev"]]
+
 
 # ✅ Distinguish between "Probably Dropped" and "Probably Released"
 today_date = datetime.now().strftime('%Y-%m-%d')

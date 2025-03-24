@@ -419,8 +419,17 @@
 
 
 		let movieData = [];
-		let today = new Date().toISOString().split('T')[0]; 
-		let jsonFile = `https://raw.githubusercontent.com/redpandanat/douban-coming-soon/main/data/movies_${today}.json`;
+		let today = new Date();
+		let yesterday = new Date();
+		yesterday.setDate(today.getDate() - 1);
+		
+		// Format dates as YYYY-MM-DD
+		let todayStr = today.toISOString().split('T')[0];
+		let yesterdayStr = yesterday.toISOString().split('T')[0];
+		
+		let baseURL = "https://raw.githubusercontent.com/redpandanat/douban-coming-soon/main/data/";
+		let jsonFile = `${baseURL}movies_${todayStr}.json`;
+		let fallbackJsonFile = `${baseURL}movies_${yesterdayStr}.json`;
 
 
 		const GENRES_LIST = [
@@ -428,7 +437,15 @@
 		  "家庭", "儿童", "传记", "历史", "战争", "犯罪", "西部", "奇幻", "冒险", "灾难", "武侠", "古装", "运动", "黑色电影"
 		];
 
+
 		fetch(jsonFile)
+		    .then(response => {
+		        if (!response.ok) {
+		            console.warn(`Today's data not found, trying yesterday's...`);
+		            return fetch(fallbackJsonFile); // Fetch yesterday’s file if today’s fails
+		        }
+		        return response;
+		    })
 			.then(response => response.json())
 			.then(data => {
 				let newMovies = [];

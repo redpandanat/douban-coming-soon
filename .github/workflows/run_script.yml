@@ -18,19 +18,27 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Install dependencies
         run: pip install -r requirements.txt
 
       - name: Run scraper script
         run: python douban_coming_soon_v2025.py
 
-      - name: Commit and push data files
+      - name: Set up Git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git pull origin main  # Ensure we have the latest changes
-          git add data/
-          git commit -m "Update movie data [skip ci]" || echo "No changes to commit"
-          
-          # Authenticate with the default GITHUB_TOKEN for pushing changes
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:main
+
+      - name: Commit and push changes
+        run: |
+          git add .
+          git commit -m "Update movie data [skip ci]"
+          git push https://github.com/${{ secrets.GITHUB_ACTOR }}:${{ secrets.GH_TOKEN }}@github.com/redpandanat/douban-coming-soon.git HEAD:main

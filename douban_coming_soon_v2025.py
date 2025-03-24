@@ -137,9 +137,9 @@ print(f"Probably Released Movies: {len(removed_movies[removed_movies['status'] =
 print(f"Updated Movies: {len(updated_movies)}")
 
 # ✅ Save CSV results for all categories
-new_movies.to_csv(f"data/new_movies_{today}.csv", index=False, encoding="utf-8-sig")
-removed_movies.to_csv(f"data/removed_movies_{today}.csv", index=False, encoding="utf-8-sig")
-updated_movies.to_csv(f"data/updated_movies_{today}.csv", index=False, encoding="utf-8-sig")
+#new_movies.to_csv(f"data/new_movies_{today}.csv", index=False, encoding="utf-8-sig")
+#removed_movies.to_csv(f"data/removed_movies_{today}.csv", index=False, encoding="utf-8-sig")
+#updated_movies.to_csv(f"data/updated_movies_{today}.csv", index=False, encoding="utf-8-sig")
 
 print("\nComparison complete. Results saved.")
 

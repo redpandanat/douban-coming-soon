@@ -36,6 +36,9 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Print repository URL for debugging
+        run: echo "Repository URL: https://github.com/${{ secrets.GITHUB_ACTOR }}:${{ secrets.GH_TOKEN }}@github.com/redpandanat/douban-coming-soon.git"
           
       - name: Commit and push changes
         run: |

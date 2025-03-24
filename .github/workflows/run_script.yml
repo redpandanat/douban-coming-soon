@@ -45,4 +45,4 @@ jobs:
         run: |
           git add .
           git commit -m "Update movie data [skip ci]"
-          git push https://github.com/${{ secrets.GITHUB_ACTOR }}:${{ secrets.GH_TOKEN }}@github.com/redpandanat/douban-coming-soon.git HEAD:main
+          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/redpandanat/douban-coming-soon.git HEAD:main

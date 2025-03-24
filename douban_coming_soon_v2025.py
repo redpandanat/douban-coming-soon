@@ -131,10 +131,15 @@ new_movies = df_today[df_today["url"].isin(urls_today - urls_prev)]
 # Find **Removed Movies** (URLs in yesterday’s list but missing today)
 removed_movies = df_prev[df_prev["url"].isin(urls_prev - urls_today)].copy()
 
+# Initialize old_release_date to the same value as release_date for all movies
+df_today["old_release_date"] = df_today["release_date"]
+
 # Merge today and previous data to find updated movies
 updated_movies = df_today.merge(df_prev, on="url", suffixes=("_today", "_prev"))
-# Add old release date (from previous day) to today's movies
-df_today["old_release_date"] = df_today["url"].map(updated_movies.set_index("url")["release_date_prev"])
+
+# Set the old release date to the previous release date for updated movies
+df_today.loc[df_today["url"].isin(updated_movies["url"]), "old_release_date"] = updated_movies["release_date_prev"]
+
 # Now, filter to get only updated movies where release date has changed
 updated_movies = updated_movies[updated_movies["release_date_today"] != updated_movies["release_date_prev"]]
 

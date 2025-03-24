@@ -37,9 +37,13 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+      # Debugging GH_TOKEN value
+      - name: Debugging GH_TOKEN
+        run: |
+          echo "GH_TOKEN=${{ secrets.GH_TOKEN }}"
+
       - name: Commit and push changes
         run: |
           git add .
           git commit -m "Update movie data [skip ci]"
           git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/redpandanat/douban-coming-soon.git HEAD:main
-

@@ -2,14 +2,9 @@
 #then run py douban_coming_soon_v2025.py
 #then open upcoming_movies_douban.html
 
-#to do (before putting on github)
+#to do
 #add a history
 #add a compare function for any two dates
-#add some error handling?
-
-#to do (on github)
-#run once per day (try midday)
-#display webpage
 
 #to do (after github?)
 #get info from douban pages (info more reliable? plus there's more e.g. language, original title) -> then add a tab for language

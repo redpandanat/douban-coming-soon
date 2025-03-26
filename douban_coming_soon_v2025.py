@@ -44,7 +44,36 @@ headers = {
 }
 
 url = 'https://movie.douban.com/coming'
-response = requests.get(url, headers=headers)
+
+
+import time
+
+def fetch_page_with_retries(url, headers, max_retries=5):
+    """Try fetching the page up to max_retries times, with increasing delays."""
+    for attempt in range(1, max_retries + 1):
+        try:
+            response = requests.get(url, headers=headers, timeout=10)
+            if response.status_code == 200:
+                logging.info(f"Successfully fetched page on attempt {attempt}")
+                return response.text
+            else:
+                logging.warning(f"Attempt {attempt}: Received status code {response.status_code}")
+        except requests.RequestException as e:
+            logging.error(f"Attempt {attempt}: Request failed - {e}")
+
+        wait_time = 2 ** attempt  # Exponential backoff: 2, 4, 8, 16, 32 seconds
+        logging.info(f"Retrying in {wait_time} seconds...")
+        time.sleep(wait_time)
+
+    logging.error("Failed to fetch page after multiple attempts.")
+    return None
+
+# Fetch page
+page_content = fetch_page_with_retries(url, headers)
+if not page_content:
+    logging.error("Critical failure: Unable to retrieve page. Exiting.")
+    exit(1)
+
 
 # Check if the request was successful
 if response.status_code == 200:
@@ -52,18 +81,37 @@ if response.status_code == 200:
 else:
     logging.error(f"Failed to fetch the page: {url}, status code: {response.status_code}")
 
-soup = BeautifulSoup(response.text, 'html.parser')
+def parse_table_with_retries(html_content, max_retries=3):
+    """Try extracting the table multiple times if not found initially."""
+    for attempt in range(1, max_retries + 1):
+        soup = BeautifulSoup(html_content, 'html.parser')
+        table = soup.find('table')
 
-# Extract the first table using BeautifulSoup
-table = soup.find('table')
+        if table:
+            logging.info(f"Found the table on attempt {attempt}")
+            return table
 
-# Log whether the table was found
-if table:
-    rows = table.find_all('tr')
-    logging.info(f"Found the table with {len(rows)} rows.")
-else:
-    logging.error("Error: Table not found!")
-    rows = []
+        logging.warning(f"Attempt {attempt}: No table found. Retrying...")
+        time.sleep(2)  # Wait before retrying
+
+    logging.error("Failed to find the table after multiple attempts.")
+    return None
+
+# Parse with retries
+table = parse_table_with_retries(page_content)
+if not table:
+    logging.error("No table found in the HTML after multiple retries.")
+    print("Error: Unable to retrieve data. Check logs for details.")
+    exit(1)
+
+
+rows = table.find_all('tr')[1:]  # Skip header row
+
+
+
+
+
+
 
 data = []
 for row in rows[1:]:  # Skip header row

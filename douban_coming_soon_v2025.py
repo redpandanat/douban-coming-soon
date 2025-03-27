@@ -48,11 +48,12 @@ def fetch_page_with_retries(url, headers, max_retries=5):
     for attempt in range(1, max_retries + 1):
         try:
             response = requests.get(url, headers=headers, timeout=10)
-            if response.status_code == 200:
-                logging.info(f"Successfully fetched page on attempt {attempt}")
-                return response.text
-            else:
-                logging.warning(f"Attempt {attempt}: Received status code {response.status_code}")
+            if not page_content:
+                logging.error("Critical failure: Unable to retrieve page. Exiting.")
+                exit(1)
+            
+            logging.info(f"Successfully fetched the page: {url}")
+
         except requests.RequestException as e:
             logging.error(f"Attempt {attempt}: Request failed - {e}")
 

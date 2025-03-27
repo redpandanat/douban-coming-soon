@@ -48,21 +48,23 @@ def fetch_page_with_retries(url, headers, max_retries=5):
     for attempt in range(1, max_retries + 1):
         try:
             response = requests.get(url, headers=headers, timeout=10)
-            if not page_content:
-                logging.error("Critical failure: Unable to retrieve page. Exiting.")
-                exit(1)
-            
-            logging.info(f"Successfully fetched the page: {url}")
+            if response.status_code == 200:
+                logging.info(f"Successfully fetched page on attempt {attempt}")
+                return response.text  # ✅ Correctly return the page content
+
+            else:
+                logging.warning(f"Attempt {attempt}: Received status code {response.status_code}")
 
         except requests.RequestException as e:
             logging.error(f"Attempt {attempt}: Request failed - {e}")
 
-        wait_time = 2 ** attempt  # Exponential backoff: 2, 4, 8, 16, 32 seconds
+        wait_time = 2 ** attempt
         logging.info(f"Retrying in {wait_time} seconds...")
         time.sleep(wait_time)
 
     logging.error("Failed to fetch page after multiple attempts.")
-    return None
+    return None  # ✅ Always return something (prevents NameError)
+
 
 # Fetch page
 page_content = fetch_page_with_retries(url, headers)
@@ -70,12 +72,6 @@ if not page_content:
     logging.error("Critical failure: Unable to retrieve page. Exiting.")
     exit(1)
 
-
-# Check if the request was successful
-if response.status_code == 200:
-    logging.info(f"Successfully fetched the page: {url}")
-else:
-    logging.error(f"Failed to fetch the page: {url}, status code: {response.status_code}")
 
 def parse_table_with_retries(html_content, max_retries=3):
     """Try extracting the table multiple times if not found initially."""

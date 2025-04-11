@@ -180,7 +180,17 @@ print(f"removed_movies shape: {removed_movies.shape}")  # This will show the num
 updated_movies = df_today.merge(df_prev, on="url", suffixes=("_today", "_prev"))
 
 # Set the old release date to the previous release date for updated movies where the release date has changed
-df_today.loc[df_today["url"].isin(updated_movies[updated_movies["release_date_today"] != updated_movies["release_date_prev"]]["url"]), "old_release_date"] = updated_movies["release_date_prev"]
+#df_today.loc[df_today["url"].isin(updated_movies[updated_movies["release_date_today"] != updated_movies["release_date_prev"]]["url"]), "old_release_date"] = updated_movies["release_date_prev"]
+# TRY THIS NEW UPDATED MOVIE OLD RELEASE DATE FIX
+# Step 1: Create a mask for updated movies where the release date actually changed
+mask = df_today["url"].isin(
+    updated_movies[updated_movies["release_date_today"] != updated_movies["release_date_prev"]]["url"]
+)
+# Step 2: Create a mapping from URL to the previous release date
+old_dates_map = updated_movies.set_index("url")["release_date_prev"]
+# Step 3: Use the map to assign the correct old release date to each matching row
+df_today.loc[mask, "old_release_date"] = df_today.loc[mask, "url"].map(old_dates_map)
+
 
 # Now, filter to get only updated movies where the release date has actually changed
 updated_movies = updated_movies[updated_movies["release_date_today"] != updated_movies["release_date_prev"]]

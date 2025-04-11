@@ -1,658 +1,1277 @@
 <!DOCTYPE html>
+ 
 <html lang="zh">
+ 
 <head>
+ 
     <meta charset="UTF-8">
+ 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
     <title>Upcoming Movies</title>
+ 
     <style>
+ 
 		body {
+ 
 			font-family: Arial, sans-serif;
+ 
 			margin: 20px;
+ 
 			background-color: #f4f4f4;
+ 
 			color: #333;
+ 
 		}
+ 
 
+ 
 		/* Tab Navigation */
+ 
 		.tab {
+ 
 			display: inline-block;
+ 
 			padding: 12px 16px;
+ 
 			cursor: pointer;
+ 
 			border-radius: 8px 8px 0 0;
+ 
 			border: 1px solid #ccc;
+ 
 			background: #f1f1f1;
+ 
 			font-weight: bold;
+ 
 			transition: background 0.3s ease;
+ 
 		}
+ 
 
+ 
 		.tab:hover {
+ 
 			background: #ddd;
+ 
 		}
+ 
 
+ 
 		.tab.active {
+ 
 			background: #fff;
+ 
 			border-bottom: none;
+ 
 		}
+ 
 
+ 
 		/* Tab Content */
+ 
 		.tab-content {
+ 
 			display: none;
+ 
 			padding: 20px;
+ 
 			border: 1px solid #ccc;
+ 
 			border-top: none;
+ 
 			background: white;
+ 
 			border-radius: 0 0 8px 8px;
+ 
 			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+ 
 		}
+ 
 
+ 
 		/* Headings */
+ 
 		h1 {
+ 
 			text-align: center;
+ 
 			font-size: 26px;
+ 
 			color: #222;
+ 
 			text-transform: uppercase;
+ 
 			letter-spacing: 1px;
+ 
 		}
+ 
 
+ 
 		h2, h3 {
+ 
 			color: #444;
+ 
 			border-bottom: 2px solid #ddd;
+ 
 			padding-bottom: 5px;
+ 
 			margin-top: 20px;
+ 
 		}
+ 
 
+ 
 		/* Table Styling */
+ 
 		table {
+ 
 			width: 100%;
+ 
 			border-collapse: collapse;
+ 
 			margin-top: 15px;
+ 
 			background: white;
+ 
 			border-radius: 8px;
+ 
 			overflow: hidden;
+ 
 			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+ 
 		}
-				
+ 
+
+ 
 		/* Region Tables Styling */
+ 
 		#table-中国大陆, #table-中国香港, #table-中国澳门, #table-中国台湾, #table-中国+外国, #table-外国 {
+ 
 			margin-top: 20px;
+ 
 			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+ 
 			border-radius: 8px;
+ 
 			overflow: hidden;
+ 
 		}
-		
+ 
+
+ 
 		th, td {
+ 
 			padding: 12px;
+ 
 			border: 1px solid #ddd;
+ 
 			text-align: left;
+ 
 		}
+ 
 
+ 
 		/* Table Header */
+ 
 		th {
+ 
 			background: linear-gradient(to bottom, #0073e6, #005bb5);
+ 
 			color: white;
+ 
 			font-weight: bold;
+ 
 		}
+ 
 
+ 
 		/* Alternating row colors */
+ 
 		tbody tr:nth-child(odd) {
+ 
 			background-color: #f9f9f9;
+ 
 		}
+ 
 
+ 
 		tbody tr:nth-child(even) {
+ 
 			background-color: #fff;
+ 
 		}
+ 
 
+ 
 		/* Row Hover Effect */
+ 
 		tbody tr:hover {
+ 
 			background-color: #f1f1f1;
+ 
 			transition: background 0.3s ease;
+ 
 		}
+ 
 
+ 
 		/* Link Styling */
+ 
 		a {
+ 
 			color: #0073e6;
+ 
 			text-decoration: none;
+ 
 			font-weight: bold;
+ 
 		}
+ 
 
+ 
 		a:hover {
+ 
 			text-decoration: underline;
+ 
 		}
+ 
     </style>
+ 
 </head>
+ 
 <body>
+ 
     <h1>Upcoming Movies</h1>
-    <p class="update-date">Last updated: <span id="lastUpdated"></span></p>
+ 
+
+ 
     <div>
+ 
         <span class="tab active" onclick="showTab('status')">Movies by Status</span>
+ 
         <span class="tab" onclick="showTab('full-schedule')">Full Schedule</span>
+ 
         <span class="tab" onclick="showTab('region')">Movies by Region</span>
+ 
         <span class="tab" onclick="showTab('genre')">Movies by Genre</span>
+ 
     </div>
-    
+ 
+
+ 
     <div id="status" class="tab-content" style="display: block;">
+ 
         <h2>Movies by Status</h2>
+ 
 
+ 
         <h3>New</h3>
+ 
         <table id="table-new">
+ 
             <thead>
+ 
                 <tr>
+ 
                     <th>Release Date</th>
+ 
                     <th>Title</th>
+ 
                     <th>Genre</th>
+ 
                     <th>Region</th>
+ 
                     <th>Want to See</th>
+ 
                 </tr>
+ 
             </thead>
+ 
             <tbody></tbody>
+ 
         </table>
+ 
 
+ 
         <h3>Updated Release Date</h3>
+ 
         <table id="table-updated">
+ 
             <thead>
+ 
                 <tr>
+ 
                     <th>Release Date</th>
+ 
                     <th>Old Release Date</th>
+ 
                     <th>Title</th>
+ 
                     <th>Genre</th>
+ 
                     <th>Region</th>
+ 
                     <th>Want to See</th>
+ 
                 </tr>
+ 
             </thead>
+ 
             <tbody></tbody>
+ 
         </table>
+ 
 
+ 
         <h3>Probably Dropped</h3>
+ 
         <table id="table-dropped">
+ 
             <thead>
+ 
                 <tr>
+ 
                     <th>Release Date</th>
+ 
                     <th>Title</th>
+ 
                     <th>Genre</th>
+ 
                     <th>Region</th>
+ 
                     <th>Want to See</th>
+ 
                 </tr>
+ 
             </thead>
+ 
             <tbody></tbody>
+ 
         </table>
+ 
 
+ 
         <h3>Probably Released</h3>
+ 
         <table id="table-released">
+ 
             <thead>
+ 
                 <tr>
+ 
                     <th>Release Date</th>
+ 
                     <th>Title</th>
+ 
                     <th>Genre</th>
+ 
                     <th>Region</th>
+ 
                     <th>Want to See</th>
+ 
                 </tr>
+ 
             </thead>
+ 
             <tbody></tbody>
+ 
         </table>
+ 
 
+ 
         <h3>Upcoming</h3>
+ 
         <table id="table-upcoming">
+ 
             <thead>
+ 
                 <tr>
+ 
                     <th>Release Date</th>
+ 
                     <th>Title</th>
+ 
                     <th>Genre</th>
+ 
                     <th>Region</th>
+ 
                     <th>Want to See</th>
+ 
                 </tr>
+ 
             </thead>
+ 
             <tbody></tbody>
+ 
         </table>
+ 
     </div>
+ 
 
+ 
     <div id="full-schedule" class="tab-content">
+ 
         <h2>Full Schedule</h2>
+ 
         <table id="table-full">
+ 
             <thead>
+ 
                 <tr>
+ 
                     <th>Release Date</th>
+ 
                     <th>Title</th>
+ 
                     <th>Genre</th>
+ 
                     <th>Region</th>
+ 
                     <th>Want to See</th>
+ 
                 </tr>
+ 
             </thead>
+ 
             <tbody></tbody>
+ 
         </table>
+ 
     </div>
+ 
 
+ 
     <div id="region" class="tab-content">
+ 
         <h2>Movies by Region</h2>
+ 
 
+ 
         <h3>中国大陆</h3>
+ 
         <table id="table-中国大陆">
+ 
             <thead>
+ 
                 <tr>
+ 
                     <th>Release Date</th>
+ 
                     <th>Title</th>
+ 
                     <th>Genre</th>
+ 
                     <th>Region</th>
+ 
                     <th>Want to See</th>
+ 
                 </tr>
+ 
             </thead>
+ 
             <tbody></tbody>
+ 
         </table>
+ 
 
+ 
         <h3>中国香港</h3>
+ 
         <table id="table-中国香港">
+ 
             <thead>
+ 
                 <tr>
+ 
                     <th>Release Date</th>
+ 
                     <th>Title</th>
+ 
                     <th>Genre</th>
+ 
                     <th>Region</th>
+ 
                     <th>Want to See</th>
+ 
                 </tr>
+ 
             </thead>
+ 
             <tbody></tbody>
+ 
         </table>
+ 
 
+ 
         <h3>中国澳门</h3>
+ 
         <table id="table-中国澳门">
+ 
             <thead>
+ 
                 <tr>
+ 
                     <th>Release Date</th>
+ 
                     <th>Title</th>
+ 
                     <th>Genre</th>
+ 
                     <th>Region</th>
+ 
                     <th>Want to See</th>
+ 
                 </tr>
+ 
             </thead>
+ 
             <tbody></tbody>
+ 
         </table>
-		
+ 
+
+ 
 		        <h3>中国台湾</h3>
+ 
         <table id="table-中国台湾">
+ 
             <thead>
+ 
                 <tr>
+ 
                     <th>Release Date</th>
+ 
                     <th>Title</th>
+ 
                     <th>Genre</th>
+ 
                     <th>Region</th>
+ 
                     <th>Want to See</th>
+ 
                 </tr>
+ 
             </thead>
+ 
             <tbody></tbody>
+ 
         </table>
-		
+ 
+
+ 
 		        <h3>中国+外国</h3>
+ 
         <table id="table-中国+外国">
+ 
             <thead>
+ 
                 <tr>
+ 
                     <th>Release Date</th>
+ 
                     <th>Title</th>
+ 
                     <th>Genre</th>
+ 
                     <th>Region</th>
+ 
                     <th>Want to See</th>
+ 
                 </tr>
+ 
             </thead>
+ 
             <tbody></tbody>
+ 
         </table>
-		
+ 
+
+ 
 		        <h3>外国</h3>
+ 
         <table id="table-外国">
+ 
             <thead>
+ 
                 <tr>
+ 
                     <th>Release Date</th>
+ 
                     <th>Title</th>
+ 
                     <th>Genre</th>
+ 
                     <th>Region</th>
+ 
                     <th>Want to See</th>
+ 
                 </tr>
+ 
             </thead>
+ 
             <tbody></tbody>
+ 
         </table>
+ 
     </div>
+ 
 
+ 
 
+ 
     <div id="genre" class="tab-content">
+ 
         <h2>Movies by Genre</h2>
+ 
         <table id="table-genre">
+ 
             <thead>
+ 
                 <tr>
+ 
                     <th>Release Date</th>
+ 
                     <th>Title</th>
+ 
                     <th>Genre</th>
+ 
                     <th>Region</th>
+ 
                     <th>Want to See</th>
+ 
                 </tr>
+ 
             </thead>
+ 
             <tbody></tbody>
+ 
         </table>
+ 
     </div>
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 	<script>
-	        // Simulating the last update date (you would replace this with the actual last update logic)
-	        const lastUpdatedDate = "2025-04-10"; // Change this as per your actual last updated date
-	
-	        const today = new Date();
-	        const todayStr = today.toISOString().split('T')[0]; // Format as YYYY-MM-DD
-	
-	        // Set the last updated text dynamically
-	        let updateText = "Last updated: ";
-	
-	        if (lastUpdatedDate === todayStr) {
-	            updateText += todayStr;  // Use today's date if content was updated today
-	        } else {
-	            // If last update was on a different date, use yesterday's date
-	            const yesterday = new Date(today);
-	            yesterday.setDate(today.getDate() - 1); // Get yesterday's date
-	            const yesterdayStr = yesterday.toISOString().split('T')[0]; // Format as YYYY-MM-DD
-	            updateText += yesterdayStr;
-	        }
-	
-	        document.getElementById('lastUpdated').textContent = updateText;
-		
+ 
 		function showTab(tabId) {
+ 
 			let tabs = document.getElementsByClassName('tab-content');
+ 
 			for (let tab of tabs) {
+ 
 				tab.style.display = 'none';
+ 
 			}
+ 
 
+ 
 			let selectedTab = document.getElementById(tabId);
+ 
 			if (selectedTab) {
+ 
 				selectedTab.style.display = 'block';
+ 
 			} else {
+ 
 				console.error(`Tab with ID '${tabId}' not found`);
+ 
 				return;
+ 
 			}
+ 
 
+ 
 			let tabButtons = document.getElementsByClassName('tab');
+ 
 			for (let btn of tabButtons) {
+ 
 				btn.classList.remove('active');
+ 
 			}
+ 
 
+ 
 			if (event.target) {
+ 
 				event.target.classList.add('active');
+ 
 			}
+ 
 		}
+ 
 
+ 
 				function createGenreTable(genre, data) {
+ 
 				  let container = document.createElement("div");
+ 
 				  container.innerHTML = `<h3>${genre}</h3>`;
+ 
 
+ 
 				  let table = document.createElement("table");
+ 
 				  table.innerHTML = `
+ 
 					<thead>
+ 
 					  <tr>
+ 
 						<th>Release Date</th>
+ 
 						<th>Title</th>
+ 
 						<th>Genre</th>
+ 
 						<th>Region</th>
+ 
 						<th>Want to See</th>
+ 
 					  </tr>
+ 
 					</thead>
+ 
 					<tbody></tbody>
+ 
 				  `;
+ 
 
+ 
 				  container.appendChild(table);
+ 
 				  populateTable(table, data);
+ 
 				  return container;
+ 
 				}
-				  
+ 
+
+ 
 		function formatDateForDisplay(date) {
+ 
 			return date.replace(/-99/g, '-??');
+ 
 		}
+ 
 
+ 
 		function populateTable(tableElement, data) {
+ 
 			if (!tableElement) {
+ 
 				console.warn(`Table element is null or undefined.`);
+ 
 				return;
+ 
 			}
+ 
 
+ 
 			let tableBody = tableElement.querySelector("tbody");
+ 
 			let title = tableElement.previousElementSibling;  // The <h3> before the table
+ 
 
+ 
 			if (!tableBody) {
+ 
 				console.warn(`No <tbody> found in`, tableElement);
+ 
 				return;
+ 
 			}
+ 
 
+ 
 			tableBody.innerHTML = ""; // Clear previous data
+ 
 
+ 
 			if (data.length === 0) {
+ 
 				tableElement.style.display = "none"; // Hide empty tables
+ 
 				if (title) title.style.display = "none";  // Hide the heading
+ 
 			} else {
+ 
 				tableElement.style.display = "table"; // Show the table
+ 
 				if (title) title.style.display = "block";  // Show the heading
+ 
 
+ 
 				data.forEach(row => {
+ 
 					let tr = document.createElement("tr");
+ 
 					row.forEach(cell => {
+ 
 						let td = document.createElement("td");
+ 
 						td.innerHTML = cell;
+ 
 						tr.appendChild(td);
+ 
 					});
+ 
 					tableBody.appendChild(tr);
+ 
 				});
+ 
 			}
+ 
 		}
+ 
 
+ 
 
+ 
 
+ 
 		let movieData = [];
+ 
 		let today = new Date();
+ 
 		let yesterday = new Date();
+ 
 		yesterday.setDate(today.getDate() - 1);
-		
+ 
+
+ 
 		// Format dates as YYYY-MM-DD
+ 
 		let todayStr = today.toISOString().split('T')[0];
+ 
 		let yesterdayStr = yesterday.toISOString().split('T')[0];
-		
+ 
+
+ 
 		let baseURL = "https://raw.githubusercontent.com/redpandanat/douban-coming-soon/main/data/";
+ 
 		let jsonFile = `${baseURL}movies_${todayStr}.json`;
+ 
 		let fallbackJsonFile = `${baseURL}movies_${yesterdayStr}.json`;
+ 
 
+ 
 
+ 
 		const GENRES_LIST = [
+ 
 		  "剧情", "喜剧", "动作", "爱情", "科幻", "动画", "悬疑", "惊悚", "恐怖", "纪录片", "短片", "情色", "音乐", "歌舞",
+ 
 		  "家庭", "儿童", "传记", "历史", "战争", "犯罪", "西部", "奇幻", "冒险", "灾难", "武侠", "古装", "运动", "黑色电影"
+ 
 		];
+ 
 
+ 
 
+ 
 		fetch(jsonFile)
+ 
 		    .then(response => {
+ 
 		        if (!response.ok) {
+ 
 		            console.warn(`Today's data not found, trying yesterday's...`);
+ 
 		            return fetch(fallbackJsonFile); // Fetch yesterday’s file if today’s fails
+ 
 		        }
+ 
 		        return response;
+ 
 		    })
+ 
 			.then(response => response.json())
+ 
 			.then(data => {
+ 
 				let newMovies = [];
+ 
 				let updatedMovies = [];
+ 
 				let droppedMovies = [];
+ 
 				let releasedMovies = [];
+ 
 				let upcomingMovies = [];
+ 
 				let fullSchedule = [];
+ 
 				let genreData = {};
-				
+ 
+
+ 
 				// Create an object to store region-related movies
+ 
 				let regionData = {
+ 
 					"中国大陆": [],
+ 
 					"中国香港": [],
+ 
 					"中国澳门": [],
+ 
 					"中国台湾": [],
+ 
 					"中国+外国": [],
+ 
 					"外国": []
+ 
 				};
-				
+ 
+
+ 
 				data.forEach(movie => {
+ 
 					let genreString = movie.genre.replace(/'/g, '"');  
+ 
 					let regionString = movie.region.replace(/'/g, '"');  
+ 
 					genreString = genreString.replace(/^\[|\]$/g, '');  
+ 
 					regionString = regionString.replace(/^\[|\]$/g, '');  
+ 
 					let genres = genreString ? JSON.parse(`[${genreString}]`) : []; 
+ 
 					let regions = regionString ? JSON.parse(`[${regionString}]`) : []; 
+ 
 					let genreStringFinal = genres.join(', ');
+ 
 					let regionStringFinal = regions.join(', ');
+ 
 
+ 
 					let movieRow = [
+ 
 						formatDateForDisplay(movie.release_date),
+ 
 						`<a href="${movie.url}" target="_blank">${movie.title}</a>`,
+ 
 						genreStringFinal,
+ 
 						regionStringFinal,
+ 
 						movie.want_to_see
+ 
 					];
+ 
 
+ 
 					// Categorize movies based on status
+ 
 					switch (movie.status) {
+ 
 						case "New":
+ 
 							newMovies.push(movieRow);
+ 
 							break;
+ 
 						case "Updated":
+ 
 							updatedMovies.push([
+ 
 								formatDateForDisplay(movie.release_date),
+ 
+
+								formatDateForDisplay(movie.old_release_date || "-"),
+ 
+
 								formatDateForDisplay(movie.old_release_date),
+ 
 								`<a href="${movie.url}" target="_blank">${movie.title}</a>`,
+ 
 								genreStringFinal,
+ 
 								regionStringFinal,
+ 
 								movie.want_to_see
+ 
 							]);
+ 
 							break;
+ 
 						case "Probably Dropped":
+ 
 							droppedMovies.push(movieRow);
+ 
 							break;
+ 
 						case "Probably Released":
+ 
 							releasedMovies.push(movieRow);
+ 
 							break;
+ 
 						case "Upcoming":
+ 
 							upcomingMovies.push(movieRow);
+ 
 							break;
+ 
 					}
+ 
 
+ 
 					// Full Schedule Table (contains only movies NOT in "Probably Released" or "Probably Dropped")
+ 
 					if (!["Probably Released", "Probably Dropped"].includes(movie.status)) {
+ 
 						fullSchedule.push(movieRow);
+ 
 					}
+ 
 
+ 
 					// Categorize movies based on region
+ 
 					if (!["Probably Released", "Probably Dropped"].includes(movie.status)) {
+ 
 						let hasChineseRegion = regions.some(region => region.includes('中国'));
+ 
 						let hasForeignRegion = regions.some(region => !region.includes('中国'));
+ 
 
+ 
 					// Create a flag to prevent duplicate addition
+ 
 					let addedToRegion = false;
+ 
 
+ 
 					// Process each region only once for each movie
+ 
 					regions.forEach(region => {
+ 
 						if (region.includes('中国')) {
+ 
 							// Check for specific Chinese regions and add only once
+ 
 							if (region === "中国大陆" && !addedToRegion) {
+ 
 								regionData["中国大陆"].push(movieRow);
+ 
 								addedToRegion = true; // Mark as added to prevent duplication
+ 
 							}
+ 
 							if (region === "中国香港" && !addedToRegion) {
+ 
 								regionData["中国香港"].push(movieRow);
+ 
 								addedToRegion = true;
+ 
 							}
+ 
 							if (region === "中国澳门" && !addedToRegion) {
+ 
 								regionData["中国澳门"].push(movieRow);
+ 
 								addedToRegion = true;
+ 
 							}
+ 
 							if (region === "中国台湾" && !addedToRegion) {
+ 
 								regionData["中国台湾"].push(movieRow);
+ 
 								addedToRegion = true;
+ 
 							}
+ 
 						} else if (hasChineseRegion && hasForeignRegion && !addedToRegion) {
+ 
 							// Add movie to "中国+外国" only once
+ 
 							regionData["中国+外国"].push(movieRow);
+ 
 							addedToRegion = true;
+ 
 						} else if (!hasChineseRegion && !addedToRegion) {
+ 
 							// Add movie to "外国" if there are no Chinese regions
+ 
 							regionData["外国"].push(movieRow);
+ 
 							addedToRegion = true;
+ 
 						}
+ 
 					});
+ 
 					}
+ 
 
+ 
 					// Reset addedToRegion for each movie
+ 
 					addedToRegion = false;
+ 
 
+ 
 					  // Populate the genre-specific tables
+ 
 					if (!["Probably Released", "Probably Dropped"].includes(movie.status)) {
+ 
 						genres.forEach(genre => {
+ 
 							if (GENRES_LIST.includes(genre)) {
+ 
 								if (!genreData[genre]) genreData[genre] = [];
+ 
 								genreData[genre].push(movieRow);
+ 
 							}
+ 
 						});
+ 
 					}
+ 
 					});
+ 
 
+ 
 						// Remove any existing tables before creating new ones
+ 
 						let genreContainer = document.getElementById("genre");
+ 
 						genreContainer.innerHTML = "<h2>Movies by Genre</h2>"; // Reset the section
+ 
 
+ 
 						// Create tables dynamically for each genre
+ 
 						Object.keys(genreData).forEach(genre => {
+ 
 						  let table = createGenreTable(genre, genreData[genre]);
+ 
 						  genreContainer.appendChild(table);
+ 
 						});
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 				// Create the tables dynamically based on regionData
+ 
 				function populateRegionTable() {
+ 
 					const regionOrder = [
+ 
 						"中国大陆", "中国香港", "中国澳门", "中国台湾", "中国+外国", "外国"
+ 
 					];
+ 
 
+ 
 					regionOrder.forEach(region => {
+ 
 						let tableElement = document.getElementById(`table-${region}`);
+ 
 						if (!tableElement) {
+ 
 							console.warn(`Table for ${region} not found.`);
+ 
 							return;
+ 
 						}
+ 
 
+ 
 						let title = tableElement.previousElementSibling;  // The <h3> before the table
+ 
 
+ 
 						console.log(`Populating ${region} table`);
+ 
 						console.log(`Data:`, regionData[region]);
+ 
 
+ 
 						// Check if the table has data
+ 
 						if (regionData[region].length > 0) {
+ 
 							populateTable(tableElement, regionData[region]);  // Pass the actual table element
+ 
 							tableElement.style.display = "table";  // Show the table
+ 
 							if (title) title.style.display = "block";  // Show the title
+ 
 						} else {
+ 
 							tableElement.style.display = "none";  // Hide empty tables
+ 
 							if (title) title.style.display = "none";
+ 
 						}
+ 
 					});
+ 
 				}
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 
+ 
 				// Populate tables
+ 
 				populateTable(document.getElementById('table-new'), newMovies);
+ 
 				populateTable(document.getElementById('table-updated'), updatedMovies);
+ 
 				populateTable(document.getElementById('table-dropped'), droppedMovies);
+ 
 				populateTable(document.getElementById('table-released'), releasedMovies);
+ 
 				populateTable(document.getElementById('table-upcoming'), upcomingMovies);
+ 
 				populateTable(document.getElementById('table-full'), fullSchedule);
+ 
 
+ 
 				// Call the function to populate the region tables
+ 
 				populateRegionTable();
-				
-			})
-			.catch(error => console.error('Error loading movie data:', error));
-	</script>
+ 
 
+ 
+			})
+ 
+			.catch(error => console.error('Error loading movie data:', error));
+ 
+	</script>
+ 
+
+ 
 </body>
+ 
 </html>

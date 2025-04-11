@@ -121,7 +121,7 @@
 </head>
 <body>
     <h1>Upcoming Movies</h1>
-    
+    <p class="update-date">Last updated: <span id="lastUpdated"></span></p>
     <div>
         <span class="tab active" onclick="showTab('status')">Movies by Status</span>
         <span class="tab" onclick="showTab('full-schedule')">Full Schedule</span>
@@ -330,6 +330,27 @@
 
 
 	<script>
+	        // Simulating the last update date (you would replace this with the actual last update logic)
+	        const lastUpdatedDate = "2025-04-10"; // Change this as per your actual last updated date
+	
+	        const today = new Date();
+	        const todayStr = today.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+	
+	        // Set the last updated text dynamically
+	        let updateText = "Last updated: ";
+	
+	        if (lastUpdatedDate === todayStr) {
+	            updateText += todayStr;  // Use today's date if content was updated today
+	        } else {
+	            // If last update was on a different date, use yesterday's date
+	            const yesterday = new Date(today);
+	            yesterday.setDate(today.getDate() - 1); // Get yesterday's date
+	            const yesterdayStr = yesterday.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+	            updateText += yesterdayStr;
+	        }
+	
+	        document.getElementById('lastUpdated').textContent = updateText;
+		
 		function showTab(tabId) {
 			let tabs = document.getElementsByClassName('tab-content');
 			for (let tab of tabs) {

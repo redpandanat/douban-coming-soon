@@ -1,0 +1,362 @@
+[
+    {
+        "release_date": "2025-07-11",
+        "title": "超人",
+        "genre": "['动作', '科幻', '奇幻']",
+        "region": "['美国']",
+        "want_to_see": 19351,
+        "url": "https://movie.douban.com/subject/36188176/",
+        "old_release_date": "2025-07-11",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-11",
+        "title": "八戒之天蓬下界",
+        "genre": "['动画', '奇幻']",
+        "region": "['中国大陆']",
+        "want_to_see": 2018,
+        "url": "https://movie.douban.com/subject/35623555/",
+        "old_release_date": "2025-07-11",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-12",
+        "title": "聊斋：兰若寺",
+        "genre": "['剧情', '喜剧', '动画']",
+        "region": "['中国大陆']",
+        "want_to_see": 10572,
+        "url": "https://movie.douban.com/subject/36289419/",
+        "old_release_date": "2025-07-12",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-17",
+        "title": "戏台",
+        "genre": "['剧情', '喜剧']",
+        "region": "['中国大陆', '中国香港']",
+        "want_to_see": 11589,
+        "url": "https://movie.douban.com/subject/35483395/",
+        "old_release_date": "2025-07-17",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-18",
+        "title": "小王子",
+        "genre": "['动画', '奇幻']",
+        "region": "['法国']",
+        "want_to_see": 166461,
+        "url": "https://movie.douban.com/subject/20645098/",
+        "old_release_date": "2025-07-18",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-18",
+        "title": "花漾少女杀人事件",
+        "genre": "['剧情', '悬疑']",
+        "region": "['中国大陆']",
+        "want_to_see": 14853,
+        "url": "https://movie.douban.com/subject/35183324/",
+        "old_release_date": "2025-07-18",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-18",
+        "title": "罗小黑战记2",
+        "genre": "['动画', '奇幻', '冒险']",
+        "region": "['中国大陆']",
+        "want_to_see": 9257,
+        "url": "https://movie.douban.com/subject/36448279/",
+        "old_release_date": "2025-07-18",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-18",
+        "title": "魔法蓝精灵",
+        "genre": "['喜剧', '动画', '奇幻']",
+        "region": "['美国']",
+        "want_to_see": 1618,
+        "url": "https://movie.douban.com/subject/35929770/",
+        "old_release_date": "2025-07-18",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-19",
+        "title": "疯狂海盗团2",
+        "genre": "['动画', '奇幻', '冒险']",
+        "region": "['挪威']",
+        "want_to_see": 213,
+        "url": "https://movie.douban.com/subject/37199520/",
+        "old_release_date": "2025-07-19",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-25",
+        "title": "淘金记",
+        "genre": "['喜剧', '爱情', '西部']",
+        "region": "['美国']",
+        "want_to_see": 46127,
+        "url": "https://movie.douban.com/subject/1298817/",
+        "old_release_date": "2025-07-25",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-25",
+        "title": "你行！你上！",
+        "genre": "['剧情', '喜剧']",
+        "region": "['中国大陆']",
+        "want_to_see": 40846,
+        "url": "https://movie.douban.com/subject/36767956/",
+        "old_release_date": "2025-07-25",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-25",
+        "title": "长安的荔枝",
+        "genre": "['剧情', '喜剧', '古装']",
+        "region": "['中国大陆']",
+        "want_to_see": 27923,
+        "url": "https://movie.douban.com/subject/36185502/",
+        "old_release_date": "2025-07-25",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-25",
+        "title": "神奇4侠：初露锋芒",
+        "genre": "['动作', '科幻', '冒险']",
+        "region": "['美国']",
+        "want_to_see": 25985,
+        "url": "https://movie.douban.com/subject/34825559/",
+        "old_release_date": "2025-07-25",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-25",
+        "title": "奇幻西游：新世界",
+        "genre": "['喜剧', '动画', '冒险']",
+        "region": "['中国台湾']",
+        "want_to_see": 1297,
+        "url": "https://movie.douban.com/subject/36588177/",
+        "old_release_date": "2025-07-25",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-26",
+        "title": "喜羊羊与灰太狼之异国破晓",
+        "genre": "['动画']",
+        "region": "['中国大陆']",
+        "want_to_see": 447,
+        "url": "https://movie.douban.com/subject/37337369/",
+        "old_release_date": "2025-07-26",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-31",
+        "title": "731",
+        "genre": "['剧情', '战争']",
+        "region": "['中国大陆']",
+        "want_to_see": 47947,
+        "url": "https://movie.douban.com/subject/27605659/",
+        "old_release_date": "2025-07-31",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-02",
+        "title": "浪浪山小妖怪",
+        "genre": "['剧情', '喜剧', '动画']",
+        "region": "['中国大陆']",
+        "want_to_see": 9842,
+        "url": "https://movie.douban.com/subject/36438475/",
+        "old_release_date": "2025-08-02",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-02",
+        "title": "南京照相馆",
+        "genre": "['剧情', '历史', '战争']",
+        "region": "['中国大陆']",
+        "want_to_see": 4313,
+        "url": "https://movie.douban.com/subject/36809864/",
+        "old_release_date": "2025-08-02",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-08",
+        "title": "东极岛",
+        "genre": "['剧情', '历史', '战争']",
+        "region": "['中国大陆']",
+        "want_to_see": 13462,
+        "url": "https://movie.douban.com/subject/26660874/",
+        "old_release_date": "2025-08-08",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-08",
+        "title": "奇遇",
+        "genre": "['喜剧']",
+        "region": "['中国大陆']",
+        "want_to_see": 860,
+        "url": "https://movie.douban.com/subject/36522427/",
+        "old_release_date": "2025-08-08",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-08",
+        "title": "不再退缩",
+        "genre": "['剧情', '运动']",
+        "region": "['中国大陆']",
+        "want_to_see": 130,
+        "url": "https://movie.douban.com/subject/37053028/",
+        "old_release_date": "2025-08-08",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-09",
+        "title": "猫和老鼠：星盘奇缘",
+        "genre": "['喜剧', '动画']",
+        "region": "['中国大陆', '美国']",
+        "want_to_see": 699,
+        "url": "https://movie.douban.com/subject/37263706/",
+        "old_release_date": "2025-08-09",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-15",
+        "title": "坪石先生",
+        "genre": "['剧情', '传记']",
+        "region": "['中国大陆']",
+        "want_to_see": 587,
+        "url": "https://movie.douban.com/subject/36738997/",
+        "old_release_date": "2025-08-15",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-15",
+        "title": "生还",
+        "genre": "['']",
+        "region": "['中国大陆']",
+        "want_to_see": 237,
+        "url": "https://movie.douban.com/subject/37296895/",
+        "old_release_date": "2025-08-15",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-15",
+        "title": "山河为证",
+        "genre": "['历史', '战争', '纪录片']",
+        "region": "['中国大陆']",
+        "want_to_see": 55,
+        "url": "https://movie.douban.com/subject/37355513/",
+        "old_release_date": "2025-08-15",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-16",
+        "title": "坏蛋联盟2",
+        "genre": "['喜剧', '科幻', '犯罪']",
+        "region": "['美国']",
+        "want_to_see": 7598,
+        "url": "https://movie.douban.com/subject/36829507/",
+        "old_release_date": "2025-08-16",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-16",
+        "title": "捕风追影",
+        "genre": "['剧情', '动作', '犯罪']",
+        "region": "['中国大陆', '中国香港']",
+        "want_to_see": 3434,
+        "url": "https://movie.douban.com/subject/36600459/",
+        "old_release_date": "2025-08-16",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-28",
+        "title": "无名指",
+        "genre": "['剧情']",
+        "region": "['中国香港', '中国大陆']",
+        "want_to_see": 575,
+        "url": "https://movie.douban.com/subject/36208097/",
+        "old_release_date": "2025-08-28",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-29",
+        "title": "7天",
+        "genre": "['剧情', '爱情']",
+        "region": "['中国大陆']",
+        "want_to_see": 10624,
+        "url": "https://movie.douban.com/subject/36208089/",
+        "old_release_date": "2025-08-29",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-29",
+        "title": "脱缰者也",
+        "genre": "['喜剧', '犯罪']",
+        "region": "['中国大陆']",
+        "want_to_see": 4710,
+        "url": "https://movie.douban.com/subject/36453173/",
+        "old_release_date": "2025-08-29",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-08-29",
+        "title": "有朵云像你",
+        "genre": "['剧情', '爱情', '奇幻']",
+        "region": "['中国大陆']",
+        "want_to_see": 1304,
+        "url": "https://movie.douban.com/subject/36638072/",
+        "old_release_date": "2025-08-29",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-10-01",
+        "title": "熊猫计划2",
+        "genre": "['喜剧', '动作']",
+        "region": "['中国大陆']",
+        "want_to_see": 1101,
+        "url": "https://movie.douban.com/subject/37211128/",
+        "old_release_date": "2025-10-01",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-10-01",
+        "title": "猪猪侠·一只老猪的逆袭",
+        "genre": "['剧情', '喜剧', '动画']",
+        "region": "['中国大陆']",
+        "want_to_see": 427,
+        "url": "https://movie.douban.com/subject/37282414/",
+        "old_release_date": "2025-10-01",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-12-31",
+        "title": "无名之辈：意义非凡",
+        "genre": "['喜剧', '犯罪']",
+        "region": "['中国大陆']",
+        "want_to_see": 19663,
+        "url": "https://movie.douban.com/subject/36311677/",
+        "old_release_date": "2025-12-31",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2027-02-06",
+        "title": "流浪地球3(上)",
+        "genre": "['科幻', '冒险', '灾难']",
+        "region": "['中国大陆']",
+        "want_to_see": 83221,
+        "url": "https://movie.douban.com/subject/36212391/",
+        "old_release_date": "2027-02-06",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2025-07-10",
+        "title": "天宝",
+        "genre": "['剧情', '传记', '历史']",
+        "region": "['中国大陆']",
+        "want_to_see": 280,
+        "url": "https://movie.douban.com/subject/35613194/",
+        "old_release_date": "2025-07-10",
+        "status": "Probably Dropped"
+    }
+]

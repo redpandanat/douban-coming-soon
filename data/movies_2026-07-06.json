@@ -1,0 +1,252 @@
+[
+    {
+        "release_date": "2026-07-10",
+        "title": "海洋奇缘：启航",
+        "genre": "['喜剧', '动作', '奇幻']",
+        "region": "['美国', '新西兰']",
+        "want_to_see": 4770,
+        "url": "https://movie.douban.com/subject/36343469/",
+        "old_release_date": "2026-07-10",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-07-10",
+        "title": "命抉",
+        "genre": "['剧情', '犯罪', '悬疑']",
+        "region": "['中国大陆']",
+        "want_to_see": 182,
+        "url": "https://movie.douban.com/subject/35498099/",
+        "old_release_date": "2026-07-10",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-07-11",
+        "title": "功夫女足",
+        "genre": "['剧情', '喜剧', '运动']",
+        "region": "['中国香港', '中国大陆']",
+        "want_to_see": 19304,
+        "url": "https://movie.douban.com/subject/36452545/",
+        "old_release_date": "2026-07-11",
+        "status": "New"
+    },
+    {
+        "release_date": "2026-07-11",
+        "title": "全城追缉",
+        "genre": "['剧情', '犯罪']",
+        "region": "['中国大陆']",
+        "want_to_see": 52,
+        "url": "https://movie.douban.com/subject/38541236/",
+        "old_release_date": "2026-07-11",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-07-17",
+        "title": "林家宅37号",
+        "genre": "['悬疑', '惊悚']",
+        "region": "['中国大陆']",
+        "want_to_see": 102,
+        "url": "https://movie.douban.com/subject/37435260/",
+        "old_release_date": "2026-07-17",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-07-18",
+        "title": "哈姆雷特",
+        "genre": "['剧情']",
+        "region": "['英国']",
+        "want_to_see": 17232,
+        "url": "https://movie.douban.com/subject/26588017/",
+        "old_release_date": "2026-07-18",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-07-24",
+        "title": "八仙！",
+        "genre": "['喜剧', '动画', '奇幻']",
+        "region": "['中国大陆']",
+        "want_to_see": 1901,
+        "url": "https://movie.douban.com/subject/36882191/",
+        "old_release_date": "2026-07-24",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-07-24",
+        "title": "想你了",
+        "genre": "['剧情']",
+        "region": "['中国大陆']",
+        "want_to_see": 1575,
+        "url": "https://movie.douban.com/subject/37021936/",
+        "old_release_date": "2026-07-24",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-07-25",
+        "title": "澎湖海战",
+        "genre": "['动作', '历史', '战争']",
+        "region": "['中国大陆']",
+        "want_to_see": 4,
+        "url": "https://movie.douban.com/subject/35558234/",
+        "old_release_date": "2026-07-25",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-07-29",
+        "title": "蜘蛛侠：崭新之日",
+        "genre": "['动作', '科幻', '奇幻']",
+        "region": "['美国']",
+        "want_to_see": 40247,
+        "url": "https://movie.douban.com/subject/36246195/",
+        "old_release_date": "2026-07-29",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-08-01",
+        "title": "群星闪耀时",
+        "genre": "['剧情', '科幻']",
+        "region": "['中国大陆']",
+        "want_to_see": 5378,
+        "url": "https://movie.douban.com/subject/35875462/",
+        "old_release_date": "2026-08-01",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-08-07",
+        "title": "杀死比尔：血色全传",
+        "genre": "['动作', '犯罪']",
+        "region": "['美国']",
+        "want_to_see": 59428,
+        "url": "https://movie.douban.com/subject/10756537/",
+        "old_release_date": "2026-08-07",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-08-07",
+        "title": "年会不能停2！",
+        "genre": "['喜剧']",
+        "region": "['中国大陆']",
+        "want_to_see": 12086,
+        "url": "https://movie.douban.com/subject/36850814/",
+        "old_release_date": "2026-08-07",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-08-08",
+        "title": "大唐妖探",
+        "genre": "['喜剧', '动画', '悬疑']",
+        "region": "['中国大陆']",
+        "want_to_see": 2148,
+        "url": "https://movie.douban.com/subject/35464353/",
+        "old_release_date": "2026-08-08",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-08-08",
+        "title": "汪汪队立大功大电影3：勇闯恐龙...",
+        "genre": "['喜剧', '科幻', '动画']",
+        "region": "['加拿大', '美国']",
+        "want_to_see": 544,
+        "url": "https://movie.douban.com/subject/36791178/",
+        "old_release_date": "2026-08-08",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-08-14",
+        "title": "奥德赛",
+        "genre": "['动作', '历史', '奇幻']",
+        "region": "['美国', '英国']",
+        "want_to_see": 86503,
+        "url": "https://movie.douban.com/subject/36808876/",
+        "old_release_date": "2026-08-14",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-08-14",
+        "title": "逃出绝命街",
+        "genre": "['动作', '科幻', '惊悚']",
+        "region": "['美国']",
+        "want_to_see": 13594,
+        "url": "https://movie.douban.com/subject/36318703/",
+        "old_release_date": "2026-08-14",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-08-19",
+        "title": "去你的岛",
+        "genre": "['爱情', '动画', '奇幻']",
+        "region": "['中国大陆']",
+        "want_to_see": 2183,
+        "url": "https://movie.douban.com/subject/35275131/",
+        "old_release_date": "2026-08-19",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-08-19",
+        "title": "偷偷喜欢你",
+        "genre": "['剧情', '爱情']",
+        "region": "['中国台湾']",
+        "want_to_see": 519,
+        "url": "https://movie.douban.com/subject/36994226/",
+        "old_release_date": "2026-08-19",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-08-19",
+        "title": "偷偷藏不住",
+        "genre": "['剧情', '爱情']",
+        "region": "['中国大陆']",
+        "want_to_see": 511,
+        "url": "https://movie.douban.com/subject/37452950/",
+        "old_release_date": "2026-08-19",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-08-19",
+        "title": "我想留在你身边",
+        "genre": "['爱情', '奇幻']",
+        "region": "['中国大陆']",
+        "want_to_see": 508,
+        "url": "https://movie.douban.com/subject/35390242/",
+        "old_release_date": "2026-08-19",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-08-21",
+        "title": "手捧繁星",
+        "genre": "['剧情']",
+        "region": "['中国大陆']",
+        "want_to_see": 31,
+        "url": "https://movie.douban.com/subject/37659649/",
+        "old_release_date": "2026-08-21",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-08-28",
+        "title": "密档",
+        "genre": "['剧情', '悬疑']",
+        "region": "['中国大陆']",
+        "want_to_see": 556,
+        "url": "https://movie.douban.com/subject/35209727/",
+        "old_release_date": "2026-08-28",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2027-02-06",
+        "title": "流浪地球3(上)",
+        "genre": "['科幻', '冒险', '灾难']",
+        "region": "['中国大陆']",
+        "want_to_see": 96825,
+        "url": "https://movie.douban.com/subject/36212391/",
+        "old_release_date": "2027-02-06",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2027-02-??",
+        "title": "守密者",
+        "genre": "['剧情']",
+        "region": "['中国大陆']",
+        "want_to_see": 492,
+        "url": "https://movie.douban.com/subject/37497264/",
+        "old_release_date": "2027-02-99",
+        "status": "Upcoming"
+    }
+]

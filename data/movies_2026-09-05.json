@@ -1,0 +1,202 @@
+[
+    {
+        "release_date": "2026-09-12",
+        "title": "我想留在你身边",
+        "genre": "['爱情', '奇幻']",
+        "region": "['中国大陆']",
+        "want_to_see": 931,
+        "url": "https://movie.douban.com/subject/35390242/",
+        "old_release_date": "2026-09-12",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-09-12",
+        "title": "偷偷喜欢你",
+        "genre": "['剧情', '爱情']",
+        "region": "['中国台湾']",
+        "want_to_see": 905,
+        "url": "https://movie.douban.com/subject/36994226/",
+        "old_release_date": "2026-09-12",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-09-12",
+        "title": "床下有人4",
+        "genre": "['悬疑', '惊悚']",
+        "region": "['中国大陆']",
+        "want_to_see": 112,
+        "url": "https://movie.douban.com/subject/36961914/",
+        "old_release_date": "2026-09-12",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-09-17",
+        "title": "目不转睛",
+        "genre": "['悬疑']",
+        "region": "['中国大陆']",
+        "want_to_see": 169,
+        "url": "https://movie.douban.com/subject/37517044/",
+        "old_release_date": "2026-09-17",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-09-19",
+        "title": "一路超平安",
+        "genre": "['喜剧']",
+        "region": "['中国大陆']",
+        "want_to_see": 277,
+        "url": "https://movie.douban.com/subject/36192993/",
+        "old_release_date": "2026-09-19",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-09-20",
+        "title": "那些年我们的初恋",
+        "genre": "['爱情']",
+        "region": "['中国大陆']",
+        "want_to_see": 13,
+        "url": "https://movie.douban.com/subject/35027221/",
+        "old_release_date": "2026-09-20",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-09-24",
+        "title": "明月照他乡",
+        "genre": "['纪录片']",
+        "region": "['中国大陆']",
+        "want_to_see": 20,
+        "url": "https://movie.douban.com/subject/37406669/",
+        "old_release_date": "2026-09-24",
+        "status": "New"
+    },
+    {
+        "release_date": "2026-09-25",
+        "title": "复仇者联盟4：终局之战",
+        "genre": "['剧情', '动作', '科幻']",
+        "region": "['美国']",
+        "want_to_see": 203320,
+        "url": "https://movie.douban.com/subject/26100958/",
+        "old_release_date": "2026-09-25",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-09-25",
+        "title": "老江湖",
+        "genre": "['喜剧', '动作', '犯罪']",
+        "region": "['中国大陆']",
+        "want_to_see": 3046,
+        "url": "https://movie.douban.com/subject/35840408/",
+        "old_release_date": "2026-09-25",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-09-25",
+        "title": "死亡禁区实录",
+        "genre": "['悬疑', '惊悚', '恐怖']",
+        "region": "['中国大陆']",
+        "want_to_see": 351,
+        "url": "https://movie.douban.com/subject/37380650/",
+        "old_release_date": "2026-09-25",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-09-25",
+        "title": "铁达妮的号",
+        "genre": "['剧情', '喜剧']",
+        "region": "['中国大陆']",
+        "want_to_see": 134,
+        "url": "https://movie.douban.com/subject/37144718/",
+        "old_release_date": "2026-09-25",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-09-25",
+        "title": "红衣新娘",
+        "genre": "['悬疑', '惊悚', '恐怖']",
+        "region": "['中国大陆']",
+        "want_to_see": 34,
+        "url": "https://movie.douban.com/subject/37407445/",
+        "old_release_date": "2026-09-25",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-09-30",
+        "title": "野兽之心",
+        "genre": "['剧情', '动作', '冒险']",
+        "region": "['美国']",
+        "want_to_see": 8773,
+        "url": "https://movie.douban.com/subject/36828393/",
+        "old_release_date": "2026-09-30",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-10-23",
+        "title": "象行记",
+        "genre": "['纪录片']",
+        "region": "['中国大陆', '新加坡']",
+        "want_to_see": 935,
+        "url": "https://movie.douban.com/subject/36464801/",
+        "old_release_date": "2026-10-23",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2027-02-06",
+        "title": "流浪地球3(上)",
+        "genre": "['科幻', '冒险', '灾难']",
+        "region": "['中国大陆']",
+        "want_to_see": 100685,
+        "url": "https://movie.douban.com/subject/36212391/",
+        "old_release_date": "2027-02-06",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2027-02-??",
+        "title": "守密者",
+        "genre": "['剧情']",
+        "region": "['中国大陆']",
+        "want_to_see": 792,
+        "url": "https://movie.douban.com/subject/37497264/",
+        "old_release_date": "2027-02-99",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-09-05",
+        "title": "大熊雨林",
+        "genre": "['纪录片', '短片']",
+        "region": "['加拿大']",
+        "want_to_see": 1636,
+        "url": "https://movie.douban.com/subject/33422507/",
+        "old_release_date": NaN,
+        "status": "Probably Released"
+    },
+    {
+        "release_date": "2026-09-05",
+        "title": "红闪电",
+        "genre": "['剧情']",
+        "region": "['中国大陆']",
+        "want_to_see": 208,
+        "url": "https://movie.douban.com/subject/37171813/",
+        "old_release_date": NaN,
+        "status": "Probably Released"
+    },
+    {
+        "release_date": "2026-09-12",
+        "title": "浪花儿",
+        "genre": "['纪录片']",
+        "region": "['中国大陆']",
+        "want_to_see": 3809,
+        "url": "https://movie.douban.com/subject/37527015/",
+        "old_release_date": NaN,
+        "status": "Probably Dropped"
+    },
+    {
+        "release_date": "2026-09-25",
+        "title": "梁祝·化蝶",
+        "genre": "['爱情', '动画', '奇幻']",
+        "region": "['中国大陆', '中国香港']",
+        "want_to_see": 449,
+        "url": "https://movie.douban.com/subject/36421885/",
+        "old_release_date": NaN,
+        "status": "Probably Dropped"
+    }
+]

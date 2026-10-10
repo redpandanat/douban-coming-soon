@@ -1,0 +1,132 @@
+[
+    {
+        "release_date": "2026-10-16",
+        "title": "鲸口脱险",
+        "genre": "['剧情', '惊悚', '冒险']",
+        "region": "['美国']",
+        "want_to_see": 5166,
+        "url": "https://movie.douban.com/subject/36806762/",
+        "old_release_date": "2026-10-16",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-10-17",
+        "title": "三国第一部：争洛阳",
+        "genre": "['历史', '动画']",
+        "region": "['中国大陆']",
+        "want_to_see": 44678,
+        "url": "https://movie.douban.com/subject/36752981/",
+        "old_release_date": "2026-10-17",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-10-23",
+        "title": "生日快乐",
+        "genre": "['剧情']",
+        "region": "['埃及']",
+        "want_to_see": 25922,
+        "url": "https://movie.douban.com/subject/37322586/",
+        "old_release_date": "2026-10-23",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-10-23",
+        "title": "象行记",
+        "genre": "['纪录片']",
+        "region": "['中国大陆', '新加坡']",
+        "want_to_see": 1547,
+        "url": "https://movie.douban.com/subject/36464801/",
+        "old_release_date": "2026-10-23",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-10-23",
+        "title": "三星堆：未来往事",
+        "genre": "['科幻', '动画']",
+        "region": "['中国大陆']",
+        "want_to_see": 656,
+        "url": "https://movie.douban.com/subject/37509917/",
+        "old_release_date": "2026-10-23",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-10-24",
+        "title": "小羊肖恩3：怪兽来袭",
+        "genre": "['喜剧', '动画']",
+        "region": "['英国']",
+        "want_to_see": 1054,
+        "url": "https://movie.douban.com/subject/37344902/",
+        "old_release_date": "2026-10-24",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-10-30",
+        "title": "疾速追杀",
+        "genre": "['动作', '犯罪', '惊悚']",
+        "region": "['美国']",
+        "want_to_see": 88027,
+        "url": "https://movie.douban.com/subject/25798131/",
+        "old_release_date": "2026-10-30",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-11-06",
+        "title": "戴帽子的猫",
+        "genre": "['喜剧', '动画', '奇幻']",
+        "region": "['美国']",
+        "want_to_see": 470,
+        "url": "https://movie.douban.com/subject/23774856/",
+        "old_release_date": "2026-11-06",
+        "status": "New"
+    },
+    {
+        "release_date": "2026-11-20",
+        "title": "试探",
+        "genre": "['剧情', '悬疑', '惊悚']",
+        "region": "['中国大陆']",
+        "want_to_see": 1110,
+        "url": "https://movie.douban.com/subject/35068655/",
+        "old_release_date": "2026-11-20",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-12-31",
+        "title": "活久久",
+        "genre": "['剧情', '爱情']",
+        "region": "['中国大陆']",
+        "want_to_see": 394,
+        "url": "https://movie.douban.com/subject/38443833/",
+        "old_release_date": "2026-12-31",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2026-12-31",
+        "title": "狼牙行动",
+        "genre": "['动作', '犯罪']",
+        "region": "['中国大陆']",
+        "want_to_see": 98,
+        "url": "https://movie.douban.com/subject/38412138/",
+        "old_release_date": "2026-12-31",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2027-02-06",
+        "title": "流浪地球3(上)",
+        "genre": "['科幻', '冒险', '灾难']",
+        "region": "['中国大陆']",
+        "want_to_see": 102190,
+        "url": "https://movie.douban.com/subject/36212391/",
+        "old_release_date": "2027-02-06",
+        "status": "Upcoming"
+    },
+    {
+        "release_date": "2027-02-??",
+        "title": "守密者",
+        "genre": "['剧情']",
+        "region": "['中国大陆']",
+        "want_to_see": 932,
+        "url": "https://movie.douban.com/subject/37497264/",
+        "old_release_date": "2027-02-99",
+        "status": "Upcoming"
+    }
+]
